@@ -170,7 +170,9 @@ FROM city;
 SELECT * 
 FROM country;
 
-SELECT name, CountryCode, population
+SELECT city.name CityName,  CountryCode, country.name CountryName, city.population
 FROM city
-WHERE population between 10000 and 50000
-GROUP BY CountryCode;
+left join country on code = CountryCode
+WHERE city.population between 10000 and 50000
+GROUP BY CountryCode
+ORDER BY city.population DESC;
