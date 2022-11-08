@@ -26,3 +26,9 @@ CREATE TABLE tbl_student(
 
 SELECT * FROM tbl_student;
 
+CREATE TABLE tbl_today(
+st_date VARCHAR(10) NOT NULL PRIMARY KEY,
+st_name VARCHAR(10) NOT NULL,
+st_num VARCHAR(5),
+st_cal VARCHAR(5)
+);

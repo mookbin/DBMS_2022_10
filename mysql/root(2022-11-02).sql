@@ -78,7 +78,7 @@ SELECT * FROM tbl_student;
 
 -- st_num 칼럼은 PK 로 설정되어 있다
 -- PK 로 설정된 칼럼은 자동으로 UNIQUE 성질을 갖는다
--- 절대!!! 중독된 데이터를 저장할 수 없다
+-- 절대!!! 중복된 데이터를 저장할 수 없다
 -- Error Code: 1062. Duplicate entry 'S0003' for key 'tbl_student.PRIMARY'
 
 
@@ -132,4 +132,35 @@ UPDATE tbl_student
         SET st_num = 'S0001'
         WHERE st_num = 'S0033';
         
+        USE schoolDB;
+        SELECT * FROM tbl_student ORDER BY st_num DESC;
         
+        
+        
+     create database foodDB;
+
+use foodDB;
+        
+        CREATE TABLE tbl_today(
+fd_date VARCHAR(10) NOT NULL,
+fd_name VARCHAR(10) NOT NULL,
+fd_num VARCHAR(5),
+fd_cal VARCHAR(25)
+);
+
+SELECT * FROM tbl_today;
+
+DROP table tbl_today;
+
+INSERT tbl_today(fd_date, fd_name,
+fd_num,fd_cal)
+VALUES('2022-11-06','행복 토스트 식빵', 
+'1','100kcal');
+
+SELECT * FROM tbl_today;
+
+INSERT tbl_student(st_num, st_name)
+VALUES('S0002','이몽룡');
+SELECT * FROM tbl_student;
+
+
